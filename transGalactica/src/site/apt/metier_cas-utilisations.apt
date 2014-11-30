@@ -1,0 +1,348 @@
+ -----
+ Cas d'utilisation
+ -----
+ Thierry
+ -----
+ 
+Glossaire
+
+* Vocabulaire métier
+
+	[Hangar] Batiment géré par Tans'Galactica, permet le sationnement de vaisseaux.
+	
+	[Vaisseau] Véhicule spacial ou planetaire utitilisé pour le transport de personnes ou de biens par Tans'Galactica.
+	
+	[Employe] Individu employé par Trans'Galactica. L'application gère 2 types d'employés : 
+	
+        * Pilotes : Individu responsable de la conduite de vaisseaux. 
+    
+        * Mécaniciens : Individu responsable de l'entretiens de vaisseaux.
+	
+* Vocabulaire UML
+
+    [Acteur] Il représente l'abstraction d'un rôle joué par tout individu ou système informatique interagissant avec 
+    le système d'intégration, par exemple le Service WEB, nu utilisateur ou un administrateur.
+
+    [Message] Il représente une communication entre des objets qui transportent de l'information avec l'intention de 
+    déclencher une activité chez le récepteur.
+
+    [Cas d'utilisation] Il représente un ensemble de séquences d'actions réalisées par l'application et produisant un 
+    résultat observable intéressant pour un acteur particulier. 
+
+    [Enchaînement] Il représente une unité de description d'une séquence d'interactions entre le système et ses acteurs. 
+
+    [Exception] elle représente une variante possible à l'ordonnancement  logique des actions (traitement des erreurs).
+
+
+Acteurs
+
+	[Gestionnaire] Un groupe d'acteurs principaux de l'application "trans'Galactica" c'est-à-dire un de ceux pour qui les 
+	cas d'utilisation produisent la plus-value métier. Il sera la plupart du temps le déclencheur du cas d'utilisation.
+
+	[Super Gestionnaire] Un groupe d'acteur étendu du groupe <Gestionnaire>. Ayant des accès à des fonctions particulières 
+	de l'application (comme la modification ou la suppression).
+
+	[Administrateur] Un groupe d'acteurs secondaires de l'application "trans'Galactica" réalisant principalement des tâches 
+	de pilotage de l'application.
+	
+	[Anomyme] Un groupe d'acteur non identifié auprès de l'application. Il a accès à des fonctions restreintes de l'application.
+
+Cas d'utilisations 
+
+~~ -------------------------------------------------------------------------------------------------------------
+
+* Se connecter à l'application
+
+** But
+
+    Permettre à l'utilisateur de s'identifier.
+
+** Pre-conditions
+
+    * Les utilisateur <Gestionnaire>, <Super Gestionnaire> et <Administrateur> ont accès a cette fonction.
+
+** Flux d'événements
+
+    Ce cas d'utilisation commence dès que l'utilisateur accède pour la première fois à une fonction sécurisée dans le cadre 
+    d'une session d'utilisation de l'application.
+
+*** {Flux d'événement (a) : Saisie informations d'identification}
+
+    * Un formulaire vierge dénommé "Identification" de saisie des informations d'identification est affiché. 
+    Le formulaire permet la saisie des informations suivantes :
+
+        * l'identifiant de l'utilisateur, intitulé "Identifiant",
+
+        * le mot de passe, intitulé "Mot de passe".
+        
+        []
+        
+        L'affichage du mot de passe est modifié afin qu'à la place d'afficher chaque caractère du mot de passe saisie le 
+        caractère "*" soit affiché.
+
+    * L'utilisateur saisi son identifiant et son mot de passe.
+
+    * A partir de ce formulaire, l'utilisateur peut demander à se connecter via le bouton "Connection".
+    
+    * Le système vérifie que l'identifiant et le mot de passe saisie par l'utilisateur sont valides.
+    
+    * Si l'identifiant ou le mot de passe sont invalides, alors exécution de {{Exception 1 : Utilisateur inconnu}}. 
+
+    * L'utilisateur est redirigé vers le cas d'utilisation "Rechercher un Hangar".
+
+    []
+    
+    Ce cas d'utilisation prend fin lorsque l'utilisateur est identifié ou quitte l'application.
+
+** Post-conditions
+
+    [[1]] L'utilisateur est authentifié.
+    
+    [[2]] Une session d'utilisation de l'application est ouverte pour cet utilisateur.
+    
+    []
+
+** Exception
+
+    * {Exception 1 : Utilisateur inconnu} : Si le système n'identifie pas l'utilisateur alors le système doit en informer 
+    l'utilisateur en affichant un message. Les informations saisies par l'utilisateur dans le formulaire, excepté le mot 
+    de passe, ne sont pas effacées.
+
+~~ -------------------------------------------------------------------------------------------------------------
+
+* Creer un Hangar
+
+** But
+
+    Permettre à l'utilisateur de creer un Hangar.
+    
+** Pre-conditions
+    
+    * L'utilisateur est authentifié.
+
+    * Seul l'utilisateur <Super Gestionnaire> a accès à cette fonction.
+    
+    []
+
+** Flux d'événements
+
+    Ce cas d'utilisation commence dès que l'utilisateur accède au sous-onlet "Creation" de l'onglet "Hangars".
+
+*** {Flux d'événement (a) : Saisie critères de creation}
+
+*** {Flux d'événement (b) : Affichage du résultat de creation}
+
+    []
+
+    Ce cas d'utilisation prend fin lorsque l'utilisateur quitte ce cas d'utilisation autrement que par un des boutons mis 
+    à sa disposition.
+    
+** Post-conditions
+
+    Le Hangar est créé.
+	
+** Exception
+
+~~ -------------------------------------------------------------------------------------------------------------
+
+* Rechercher un Hangar
+
+** But
+
+    Permettre à l'utilisateur de lister des Hangars.
+
+** Pre-conditions
+
+    * L'utilisateur est authentifié.
+
+    * Les utilisateurs <Anomyme>, <Gestionnaire> et <Super Gestionnaire> ont accès a cette fonction.
+    
+    []
+    
+** Flux d'événements
+
+    Ce cas d'utilisation commence dès que l'utilisateur accède au sous-onlet "Recherche" de l'onglet "Hangars".
+    
+
+*** {Flux d'événement (a) : Saisie critères recherche}
+
+     * Un formulaire vierge dénommé "Recherche Hangars" de saisie de critères de recherche du hangar est affiché. 
+    Le formulaire permet la saisie des critères suivants :
+
+        * la localisation du hangar, intitulé "Localisation".
+
+		[]
+
+    * L'utilisateur saisi la localisation des hangars.
+    
+    * A partir de ce formulaire, l'utilisateur peut demander la recherche des Hangars correspondant aux critères de 
+    recherche qu'il a saisi via le bouton "Rechercher".
+
+    * Le système redirige l'utilisateur vers le {{Flux d'événement (b) : Affichage résultat recherche}}.
+
+	[]
+
+*** {Flux d'événement (b) : Affichage résultat recherche}
+
+    * Le système recherche les Hangars correspondant au critères de recherche.
+    
+    * Un formulaire dénommé "Recherche Hangars" identique au formulaire "Recherche Hangars" est affiché avec en plus 
+    les Hangars trouvés sous la forme d'un tableau paginé dénommé "Liste de Hangars". Le tableau est composé des colonnes 
+    suivantes :
+
+        * la localisation du Hangar, intitulé "Localisation",
+
+        * le nombre d'emplacement du Hangar, intitulé "Nombre emplacements".
+        
+        []
+
+    * L'utilisateur consulte la liste des documents. Il peut passer de page en page.
+    
+    * A partir de ce formulaire, l'utilisateur peut réaliser un certain nombre d'actions : 
+
+        * consulter un Hangar via le bouton "Consulter", si l'utilisateur est <Gestionnaire> ou <Super Gestionnaire>.
+        
+        * modifier un Hangar via le bouton "Modifier", si l'utilisateur est <Gestionnaire> ou <Super Gestionnaire>.
+        
+        * supprimer un Hangar via le bouton "Supprimer" si l'utilisateur est <Super Gestionnaire>.
+        
+        []
+        
+    * Si l'utilisateur demande à consulter un hangar, il est redirigé vers le cas d'utilisation {{{xx} Consulter un Hangar - }}.
+	
+    * Si l'utilisateur demande à modifier un hangar, il est redirigé vers le cas d'utilisation {{{xx} Modifier un Hangar - }}.
+	
+    * Si l'utilisateur demande à supprimer un hangar, il est redirigé vers le cas d'utilisation {{{xx} Supprimer un Hangar - }}.
+	
+	[]
+	
+    Ce cas d'utilisation prend fin lorsque l'utilisateur quitte ce cas d'utilisation autrement que par un des boutons mis 
+    à sa disposition.
+	
+** Post-conditions
+
+    [[1]] la localisation saisie par l'utilsiateur est mémorisée pour usage ultérieur. 
+    
+    []
+    
+** Exception
+
+    * Aucune
+
+~~ -------------------------------------------------------------------------------------------------------------
+
+* Consulter un Hangar
+
+** But
+
+** Pre-conditions
+
+    * L'utilisateur est authentifié.
+
+    * Les utilisateurs <Gestionnaire> et <Super Gestionnaire> ont accès a cette fonction.
+    
+    []
+    
+** Flux d'événements
+
+** Post-conditions : Le Hangar est affiché.
+
+** Exception
+
+    * Aucune
+    
+~~ -------------------------------------------------------------------------------------------------------------
+
+* Modifier un Hangar
+	
+** But
+
+** Pre-conditions
+
+    * L'utilisateur est authentifié.
+
+    * Seul l'utilisateur <Super Gestionnaire> a accès à cette fonction.
+    
+    []
+    	
+** Flux d'événements
+
+** Post-conditions : Le Hangar est modifié.
+
+** Exception
+
+    * Aucune
+    	
+~~ -------------------------------------------------------------------------------------------------------------
+	
+* Supprimer un Hangar
+
+** But
+
+** Pre-conditions
+
+    * L'utilisateur est authentifié.
+
+    * Seul l'utilisateur <Super Gestionnaire> a accès à cette fonction.
+    
+    []
+    
+** Flux d'événements
+
+** Post-conditions
+    
+    Le Hangar est supprimé.
+ 
+** Exception
+
+    * Aucune
+    
+~~ -------------------------------------------------------------------------------------------------------------
+	
+* Editer les fiches de Salaire
+
+** But
+
+	Permettre l'édition des fiches de salaire des employés par un traitement automatisé 
+
+** Pre-conditions
+    
+    * Pésence du repertoire de sortie.
+    
+    []
+    
+** Flux d'événements
+
+	* Les sytème récupère la date de calcul, par défaut, celle ci vaux la date du jour.
+	
+	* Le système recherche les employés actifs.
+	
+	* Pour chaque employé, le système édite la fiche de salaire, composée des champs suivants :
+	
+		* Un titre "Salaire [de|d'] <mois du calcul> <année du calcul>,
+		
+		* Le nom de l'employé, intitulé "Nom",
+		
+		* Le date d'embauche de l'employé, intitulé "Date d'embauche",
+		
+		* Le type de l'employé, intitulé "Métier",
+		
+		* Le montant du salaire de base de l'employé, intitulé "Salaire de base", suffixé par la mention "crédits",
+		
+		* Le montant de la prime d'anciénneté de l'employé, intitulé "Prime d'anciénneté", suffixé par la mention "crédits",
+		
+		* Le montant de la prime d'expérience de l'employé, intitulé "Prime d'expérience", suffixé par la mention "crédits",
+		
+		* Le montant du salaire versé à l'employé, intitulé "Salaire", suffixé par la mention "crédits".
+		
+		[]
+			
+	[]
+	
+** Post-conditions
+    
+    Les fiches de salaires au format TXT sont présentes dans le repertoire de sortie.
+ 
+** Exception
+
+    * Aucune

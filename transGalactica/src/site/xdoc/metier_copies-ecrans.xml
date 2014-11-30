@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	
+	<properties>
+		<author>Thierry</author>
+		<title>Copie d'écrans</title>
+	</properties>
+	
+	<body>
+
+		<section name="Ecrans Accueil">
+			<subsection name="Ecran de connexion">
+				<img src="../ecrans/xxx.png" />
+			</subsection>
+		</section>
+
+		<section name="Ecrans Hangar">
+			<subsection name="Ecran de recherche">
+				<img src="../ecrans/xxx.png" />
+			</subsection>
+			<subsection name="Ecran de Création">
+				<img src="../ecrans/xxx.png" />
+			</subsection>
+			<subsection name="Ecran d'affichage">
+				<img src="../ecrans/xxx.png" />
+			</subsection>
+		</section>
+	
+	</body>
+	
+</document>

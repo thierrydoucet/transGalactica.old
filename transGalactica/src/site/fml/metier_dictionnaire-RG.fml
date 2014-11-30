@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs title="Dictionnaire des Règles de Gestion">
+
+	<part id="Règles se rapportant aux Hangars">
+		<faq>
+			<question>HANGAR_VALIDATION_1</question>
+			<answer>
+				<p>
+					La
+					<code>localisation</code>
+					d'un hangar est obligatoire.
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>HANGAR_VALIDATION_2</question>
+			<answer>
+				<p>La suppression d'un hangar n'est possible que si il vide (sans vaisseaux affectés).</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>HANGAR_VALIDATION_3</question>
+			<answer>
+				<p>
+					Lors d'une recherche de Hangar, la
+					<code>localisation</code>
+					est obligatoire.
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>HANGAR_VALIDATION_4</question>
+			<answer>
+				<p>
+					Pour pouvoir affecter un vaisseau a un hangar, le nombre de vaisseau present dans le hangar doit être inférieur au nombre d'emplacement du hangar.
+				</p>
+			</answer>
+		</faq>
+	</part>
+	
+	<part id="Règles se rapportant aux Vaisseaux">
+		<faq>
+			<question>VAISSEAU_VALIDATION_1</question>
+			<answer>
+				<p>
+					L'
+					<code>immatriculation</code>
+					d'un vaisseau est obligatoire.
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>VAISSEAU_VALIDATION_2</question>
+			<answer>
+				<p>
+					Le 
+					<code>modèle</code>
+					d'un vaisseau est obligatoire.
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>VAISSEAU_VALIDATION_3</question>
+			<answer>
+				<p>
+					Lors d'une recherche de vaisseaux un des champs,
+					<code>immatriculation</code> ou <code>modele</code> ne doit pas être vide.
+				</p>
+			</answer>
+		</faq>
+	</part>
+
+	<part id="Règles se rapportant aux Employe">
+		<faq>
+			<question>EMPLOYE_SALAIRE_1</question>
+			<answer>
+				<p>
+					Le Salaire est calculé celon la formule suivante : 
+					<code>{Salaire du mois en cours} = {Salaire base} + {Prime ancienneté} + {Prime expérience} </code>.
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>EMPLOYE_SALAIRE_2</question>
+			<answer>
+				<p>
+					<code>{Salaire base}</code> vaut 
+					<ul>
+						<li>Pour un Pilote : 8 000 crédits</li>
+						<li>Pour un Mécanicien : 10 000 crédits</li>
+					</ul>
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>EMPLOYE_SALAIRE_3</question>
+			<answer>
+				<p>
+					<code>{Prime ancienneté}</code> vaut <code>{Nombre d'année d'anciennetés pleine} * 100 crédits</code>,
+					avec <code>{Nombre d'année d'anciennetés pleine} = {Année de la date de calcul} - {Année de la date d'embauche}</code>
+				</p>
+			</answer>
+		</faq>
+		<faq>
+			<question>EMPLOYE_SALAIRE_4</question>
+			<answer>
+					<code>{Prime expérience}</code> vaut 
+					<ul>
+						<li>Pour un Pilote : {Nombre d'heures de vol} * 1 crédit</li>
+						<li>Pour un Mécanicien : {Nombre de spécialités} * 1000 crédits</li>
+					</ul>
+			</answer>
+		</faq>
+	</part>	
+</faqs>

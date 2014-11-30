@@ -1,0 +1,2 @@
+- Utilisation des profiles spring
+- Module DAO d'appel de WS (RestTemplate + JAXB)

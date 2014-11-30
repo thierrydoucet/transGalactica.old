@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+	<bannerLeft>
+		<name>${project.name}</name>
+		<src>${project.url}/images/transGalactica-logo-titre.png</src>
+		<alt>Trans'Galactica</alt>
+		<href>${project.url}/index.html</href>
+	</bannerLeft>
+
+	<publishDate format="yyyy-MM-dd HH:mm" />
+
+	<poweredBy>
+		<logo img="http://www.springframework.org/buttons/spring_small.png" name="Spring Framework"
+			href="http://www.springframework.org/" />
+		<logo img="${project.url}/images/logos/maven-feather.png" name="Build with Maven 2" href="http://maven.apache.org/" />
+	</poweredBy>
+
+	<body>
+		<breadcrumbs>
+			<item name="${project.name}" href="${project.url}/index.html" />
+		</breadcrumbs>
+
+		<links>
+			<item name="${project.name}" href="${project.url}/index.html" />
+		</links>
+
+		<menu inherit="top" ref="parent" />
+
+		<menu name="Métier">
+			<item name="Cas d'utilisation" href="${project.url}/metier_cas-utilisations.html" />
+			<item name="Règles de gestion" href="${project.url}/metier_dictionnaire-RG.html" />
+			<item name="Copies d'écrans" href="${project.url}/metier_copies-ecrans.html" />
+		</menu>
+
+		<menu inherit="bottom" ref="modules" />
+		<menu inherit="bottom" ref="reports" />
+
+	</body>
+
+</project>
