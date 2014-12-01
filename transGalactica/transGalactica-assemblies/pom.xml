@@ -6,10 +6,16 @@
 
 	<groupId>org.transgalactica.core</groupId>
 	<artifactId>transGalactica-assemblies</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Trans'Galactica - Descripteurs d'assemblage</name>
 	<description>Descripteurs d'assemblage réutilisable des applications de Trans'Galactica</description>
 
+	<scm>
+		<url>https://github.com/thierrydoucet/transGalactica</url>
+		<connection>scm:git:git://github.com/thierrydoucet/transGalactica.git/transGalactica/</connection>
+		<developerConnection>scm:git:git@github.com:thierrydoucet/transGalactica.git</developerConnection>
+	</scm>
+	
 </project>

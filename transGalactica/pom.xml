@@ -11,6 +11,68 @@
 	<name>Trans'Galactica</name>
 	<description>Racine de l'application Trans'Galactica</description>
 
+	<organization>
+		<name>Trans'Galactica</name>
+	</organization>
+
+	<scm>
+		<url>https://github.com/thierrydoucet/transGalactica</url>
+		<connection>scm:git:git://github.com/thierrydoucet/transGalactica.git</connection>
+		<developerConnection>scm:git:git@github.com:thierrydoucet/transGalactica.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<url>https://github.com/thierrydoucet/transGalactica/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<developers>
+		<developer>
+			<id>tgd</id>
+			<name>Thierry</name>
+			<organization>Trans'Galactica</organization>
+			<roles>
+				<role>Geek Java</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<contributors>
+		<contributor>
+			<name>Irys</name>
+			<roles>
+				<role>Mangeur de croquettes mortes</role>
+				<role>Dévoreur de paté mou</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Fabien</name>
+			<roles>
+				<role>Geek Java</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Riad</name>
+			<roles>
+				<role>Geek Java</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Franck</name>
+			<roles>
+				<role>Geek Java</role>
+				<role>翻訳家 (traducteur)</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Adil</name>
+			<roles>
+				<role>Geek Java</role>
+				<role>ترجمة للعربية (traduction arabe)</role>
+			</roles>
+		</contributor>
+	</contributors>
+
 	<modules>
 		<module>transGalactica-dependencies</module>
 		<module>transGalactica-assemblies</module>
@@ -115,6 +177,11 @@
 				<plugin>
 					<artifactId>maven-plugin-plugin</artifactId>
 					<version>2.9</version>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.3.2</version>
 				</plugin>
 
 				<plugin>
@@ -256,56 +323,5 @@
 		</repository> <snapshotRepository> <id>deployer-snapshots</id> <name>Nexus 
 		Snapshots Repository</name> <url>http://x.y.z:8081/nexus/content/repositories/snapshots/</url> 
 		</snapshotRepository> </distributionManagement> -->
-
-	<organization>
-		<name>Trans'Galactica</name>
-	</organization>
-
-	<developers>
-		<developer>
-			<id>tgd</id>
-			<name>Thierry</name>
-			<organization>Trans'Galactica</organization>
-			<roles>
-				<role>Geek Java</role>
-			</roles>
-		</developer>
-	</developers>
-
-	<contributors>
-		<contributor>
-			<name>Irys</name>
-			<roles>
-				<role>Mangeur de croquettes mortes</role>
-				<role>Dévoreur de paté mou</role>
-			</roles>
-		</contributor>
-		<contributor>
-			<name>Fabien</name>
-			<roles>
-				<role>Geek Java</role>
-			</roles>
-		</contributor>
-		<contributor>
-			<name>Riad</name>
-			<roles>
-				<role>Geek Java</role>
-			</roles>
-		</contributor>
-		<contributor>
-			<name>Franck</name>
-			<roles>
-				<role>Geek Java</role>
-				<role>翻訳家 (traducteur)</role>
-			</roles>
-		</contributor>
-		<contributor>
-			<name>Adil</name>
-			<roles>
-				<role>Geek Java</role>
-				<role>ترجمة للعربية (traduction arabe)</role>
-			</roles>
-		</contributor>
-	</contributors>
 
 </project>
