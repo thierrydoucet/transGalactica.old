@@ -39,6 +39,8 @@
 
 	<properties>
 		<dependencies.version>1.0.0-SNAPSHOT</dependencies.version>
+		<socle.version>1.0.0-SNAPSHOT</socle.version>
+		<test.version>1.0.0-SNAPSHOT</test.version>
 	</properties>
 
 	<dependencyManagement>
@@ -71,6 +73,12 @@
 			</dependency>
 			<dependency>
 				<groupId>org.transgalactica.management</groupId>
+				<artifactId>transGalactica-management-data-orm</artifactId>
+				<type>test-jar</type>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.transgalactica.management</groupId>
 				<artifactId>transGalactica-management-data-referentiel</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -91,12 +99,6 @@
 			</dependency>
 			<dependency>
 				<groupId>org.transgalactica.management.client</groupId>
-				<artifactId>transGalactica-management-data-rest</artifactId>
-				<version>${project.version}</version>
-				<type>test-jar</type>
-			</dependency>
-			<dependency>
-				<groupId>org.transgalactica.management.client</groupId>
 				<artifactId>transGalactica-management-flux-rest</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -109,6 +111,31 @@
 				<version>${dependencies.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.transgalactica.fwk</groupId>
+				<artifactId>transGalactica-fwk-domain</artifactId>
+				<version>${socle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.transgalactica.fwk</groupId>
+				<artifactId>transGalactica-fwk-validation</artifactId>
+				<version>${socle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.transgalactica.fwk</groupId>
+				<artifactId>transGalactica-fwk-web</artifactId>
+				<version>${socle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.transgalactica.fwk</groupId>
+				<artifactId>transGalactica-fwk-remote</artifactId>
+				<version>${socle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.transgalactica.core</groupId>
+				<artifactId>transGalactica-test</artifactId>
+				<version>${test.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
